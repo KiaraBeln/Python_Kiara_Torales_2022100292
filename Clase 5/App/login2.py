@@ -6,7 +6,7 @@ login = Blueprint('login', __name__)
 
 DB_CONFIG = {
     'host': 'localhost',
-    'user': 'unida',
+    'user': 'Unida',
     'password': 'unida123',
     'database': 'jaguarete'             
 }
