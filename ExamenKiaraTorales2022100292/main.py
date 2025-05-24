@@ -19,4 +19,4 @@ def cliente():
     return jsonify(resultado)
 
 if __name__ == '__main__':
-    app.run(host='localhost', debug = True, port = 5001)
+    app.run(host='localhost', debug = True, port = 5003)
