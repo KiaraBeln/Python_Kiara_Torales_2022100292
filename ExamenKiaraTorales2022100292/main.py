@@ -1,22 +1,13 @@
 from flask import Flask, request, jsonify
-from cliente import verificar_cliente
+from cliente import cliente
 
 app = Flask(__name__)
+###servicios rest
+app.register_blueprint(cliente)
 
-@app.route('/cliente', methods=['POST'])
-def cliente():
-    data = request.get_json()
-    if not data or 'ci' not in data:
-        return jsonify({
-            "accion": "Falta parámetro",
-            "codRes": "ERROR",
-            "menRes": "Debe enviar la cédula (ci)",
-            "ci": None
-        }), 400
-
-    ci = data['ci']
-    resultado = verificar_cliente(ci)
-    return jsonify(resultado)
+@app.route('/', methods=['GET'])
+def hello():
+    return 'Hello mundo'
 
 if __name__ == '__main__':
     app.run(host='localhost', debug = True, port = 5003)
